@@ -17,15 +17,15 @@ for row in picture:
             print("*", end= ' ')
     print()
 
-# a = 0
-# while a < 8:
-#     for x in range(len(picture[a])):
-#         if picture[a][x] == 0:
-#             picture[a][x] = " "
-#         if picture[a][x] == 1:
-#             picture[a][x] = "*"
-#     print(' '.join(map(str, picture[a])))
-#     a+=1
+a = 0
+while a < 8:
+    for x in range(len(picture[a])):
+        if picture[a][x] == 0:
+            picture[a][x] = " "
+        if picture[a][x] == 1:
+            picture[a][x] = "*"
+    print(' '.join(map(str, picture[a])))
+    a+=1
 
 
 
