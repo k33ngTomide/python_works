@@ -3,7 +3,7 @@ print('''Menu List
         2. Messages
         3. Chat
         4. Call register
-        5.Tones
+        5. Tones
         6. Settings
         7. Call divert
         8. Games
@@ -22,7 +22,7 @@ if user_entry == 1:
     4. Erase
     5. Edit
     6. Assign tone
-    7. Send b'card
+    7. Send b"card
     8. Options
     9. Speed dials
     10. Voice tags''')
@@ -154,7 +154,7 @@ elif user_entry == 6:
 elif user_entry == 7:
     print("Call divert")
 
-elif user_entry == 8 :
+elif user_entry == 8:
     print("Games")
 
 elif user_entry == 9:

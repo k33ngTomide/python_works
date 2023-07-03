@@ -24,3 +24,5 @@ for x in range(11):
         print(' ', end=' ')
     for g in range(x):
         print('*', end=' ')
+
+
