@@ -15,7 +15,7 @@ def multiplication_table(end):
             print("%i x %i  = %-3i" % (b, a, (a * b)), end='\t\t')
 
 
-multiplication_table(20)
+multiplication_table(30)
 
 # def multiplication_table(size):
 #     a = 1
