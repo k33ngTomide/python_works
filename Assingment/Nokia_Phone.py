@@ -28,55 +28,19 @@ def main_menu():
     elif user_entry == 6:
         settings()
     elif user_entry == 7:
-        print('''___Call divert___
-        0. Back''')
-        user_entry_15 = int(input('Enter:  '))
-        if user_entry_15 == 0:
-            main_menu()
-        else:
-            invalid()
+        call_divert()
     elif user_entry == 8:
-        print('''___Games___
-        0. Back''')
-        user_entry_16 = int(input('Enter:  '))
-        if user_entry_16 == 0:
-            main_menu()
-        else:
-            invalid()
+        games()
     elif user_entry == 9:
-        print('''___Calculator___
-        0. Back''')
-        user_entry_17 = int(input('Enter:  '))
-        if user_entry_17 == 0:
-            main_menu()
-        else:
-            invalid()
+        calculator()
     elif user_entry == 10:
-        print('''___Reminder___
-        0. Back''')
-        user_entry_18 = int(input('Enter:  '))
-        if user_entry_18 == 0:
-            main_menu()
-        else:
-            invalid()
+        remainder()
     elif user_entry == 11:
         clock()
     elif user_entry == 12:
-        print('''___Profile___
-        0. Back''')
-        user_entry_19 = int(input('Enter:  '))
-        if user_entry_19 == 0:
-            main_menu()
-        else:
-            invalid()
+        profile()
     elif user_entry == 13:
-        print('''___SIM services___
-                0. Back''')
-        user_entry_20 = int(input('Enter:  '))
-        if user_entry_20 == 0:
-            main_menu()
-        else:
-            invalid()
+        sim_services()
     elif user_entry == 0:
         off()
     else:
@@ -85,6 +49,71 @@ def main_menu():
 
 def off():
     exit()
+
+
+def call_divert():
+    print('''___Call divert___
+            0. Back''')
+    user_entry_15 = int(input('Enter:  '))
+    if user_entry_15 == 0:
+        main_menu()
+    else:
+        print("Invalid Entry")
+        call_divert()
+
+
+def games():
+    print('''___Games___
+            0. Back''')
+    user_entry_16 = int(input('Enter:  '))
+    if user_entry_16 == 0:
+        main_menu()
+    else:
+        print("Invalid entry")
+        games()
+
+
+def profile():
+    print('''___Profile___
+            0. Back''')
+    user_entry_19 = int(input('Enter:  '))
+    if user_entry_19 == 0:
+        main_menu()
+    else:
+        print("Invalid Entry")
+        profile()
+
+
+def calculator():
+    print('''___Calculator___
+            0. Back''')
+    user_entry_17 = int(input('Enter:  '))
+    if user_entry_17 == 0:
+        main_menu()
+    else:
+        print("Invalid Entry")
+        calculator()
+
+def remainder():
+    print('''___Reminder___
+            0. Back''')
+    user_entry_18 = int(input('Enter:  '))
+    if user_entry_18 == 0:
+        main_menu()
+    else:
+        iprint("Invalid Entry")
+        remainder()
+
+
+def sim_services():
+    print('''___SIM services___
+                    0. Back''')
+    user_entry_20 = int(input('Enter:  '))
+    if user_entry_20 == 0:
+        main_menu()
+    else:
+        print("Invalid Entry")
+        sim_services()
 
 
 def phone_book():
@@ -133,7 +162,8 @@ def phone_book():
     elif user_entry_2 == 0:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        phone_book()
 
 
 def back_phonebook():
@@ -145,7 +175,8 @@ def back_phonebook():
     elif user_entry_cr == 1:
         main_menu()
     elif user_entry_cr < 0 or user_entry_cr > 1:
-        invalid()
+        print("Invalid Entry")
+        back_phonebook()
 
 
 def options():
@@ -169,7 +200,8 @@ def options():
     elif user_entry_22 == 0:
         phone_book()
     else:
-        invalid()
+        print("Invalid Entry")
+        options()
 
 
 def messages():
@@ -245,7 +277,8 @@ def messages():
     elif user_entry_3 == 0:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        messages()
 
 
 def messages_settings():
@@ -264,7 +297,8 @@ def messages_settings():
     elif user_entry_4 == 99:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        messages_settings()
 
 
 def set_1():
@@ -286,7 +320,8 @@ def set_1():
         elif user_entry_set1 == 1:
             main_menu()
         else:
-            invalid()
+            print("Invalid Entry")
+            set_1()
     elif user_entry_set == 2:
         print('''___Message sent as___
                 0. Back
@@ -297,7 +332,9 @@ def set_1():
         elif user_entry_set2 == 1:
             main_menu()
         else:
-            invalid()
+            print("Invalid Entry")
+            set_1()
+
     elif user_entry_set == 3:
         print('''___Message validity___
                 0. Back
@@ -308,9 +345,11 @@ def set_1():
         elif user_entry_set3 == 1:
             main_menu()
         elif user_entry_set3 < 0 or user_entry_set3 > 1:
-            invalid()
+            print("Invalid Entry")
+            set_1()
     else:
-        invalid()
+        print("Invalid Entry")
+        set_1()
 
 
 def back_common():
@@ -322,7 +361,8 @@ def back_common():
     elif user_entry_c == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_common()
 
 
 def common():
@@ -344,8 +384,8 @@ def common():
     elif user_entry_c == 0:
         messages_settings()
     else:
-        invalid()
-
+        print("Invalid Entry")
+        common()
 
 def chat():
     print("___Chat___"
@@ -353,6 +393,9 @@ def chat():
     user_entry_chat = int(input())
     if user_entry_chat == 0:
         main_menu()
+    else:
+        print("Invalid Entry")
+        chat()
 
 
 def invalid():
@@ -369,7 +412,8 @@ def back_cr():
     elif user_entry_cr == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_cr()
 
 
 def call_register():
@@ -407,7 +451,8 @@ def call_register():
     elif user_entry_5 == 7:
         call_cost_settings()
     else:
-        invalid()
+        print("Invalid Entry")
+        call_register()
 
 
 def back_scd():
@@ -419,7 +464,8 @@ def back_scd():
     elif user_entry_scd1 == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_scd()
 
 
 def show_call_duration():
@@ -449,7 +495,8 @@ def show_call_duration():
         print('''___Clear times___''')
         back_scd()
     else:
-        invalid()
+        print("Invalid Entry")
+        show_call_duration()
 
 
 def back_scc():
@@ -461,7 +508,8 @@ def back_scc():
     elif user_entry_scc1 == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_scc()
 
 
 def show_call_cost():
@@ -483,7 +531,8 @@ def show_call_cost():
         print('''___Clear counters___''')
         back_scc()
     else:
-        invalid()
+        print("Invalid Entry")
+        show_call_cost()
 
 
 def call_cost_settings():
@@ -501,7 +550,8 @@ def call_cost_settings():
         print('''___Show cost in___''')
         back_cr()
     else:
-        invalid()
+        print("Invalid Entry")
+        call_cost_settings()
 
 
 def back_tones():
@@ -513,7 +563,8 @@ def back_tones():
     elif user_entry_cs1 == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_tones()
 
 
 def tones():
@@ -559,7 +610,8 @@ def tones():
         print('___Screen saver__')
         back_tones()
     else:
-        invalid()
+        print("Invalid Entry")
+        tones()
 
 
 def settings():
@@ -577,7 +629,7 @@ def settings():
     elif user_entry_6 == 3:
         security_settings()
     elif user_entry_6 == 4:
-        print('''Restore factory settings
+        print('''___Restore factory settings___
         0. Back''')
         user_input = int(input('Enter:'))
         if user_input == 0:
@@ -587,9 +639,10 @@ def settings():
         elif user_input < 0 or user_input > 1:
             invalid()
     elif user_entry_6 == 0:
-        settings()
+        main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        settings()
 
 
 def back_cs():
@@ -601,7 +654,8 @@ def back_cs():
     elif user_entry_cs1 == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_cs()
 
 
 def call_settings():
@@ -635,7 +689,8 @@ def call_settings():
         print('___Automatic answer___')
         back_cs()
     else:
-        invalid()
+        print("Invalid Entry")
+        call_settings()
 
 
 def back_ps():
@@ -647,7 +702,8 @@ def back_ps():
     elif user_entry_ps1 == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_ps()
 
 
 def phone_settings():
@@ -681,7 +737,8 @@ def phone_settings():
         print('___Confirm SIM service actions___')
         back_ps()
     else:
-        invalid()
+        print("Invalid Entry")
+        phone_settings()
 
 
 def back_ss():
@@ -693,7 +750,8 @@ def back_ss():
     elif user_entry_ss1 == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_ss()
 
 
 def security_settings():
@@ -727,7 +785,8 @@ def security_settings():
         print('___Change access codes___')
         back_ss()
     else:
-        invalid()
+        print("Invalid Entry")
+        security_settings()
 
 
 def back_clock():
@@ -739,7 +798,8 @@ def back_clock():
     elif user_entry_ss1 == 1:
         main_menu()
     else:
-        invalid()
+        print("Invalid Entry")
+        back_clock()
 
 
 def clock():
@@ -773,7 +833,8 @@ def clock():
         print('''___Auto update of date and time___''')
         back_clock()
     else:
-        invalid()
+        print("Invalid Entry")
+        clock()
 
 
 main_menu()
