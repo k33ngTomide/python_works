@@ -66,3 +66,9 @@ if __name__ == "__main__":
     # print("The smallest number is ", smaller(7, 5, 0))
     print(bigger(54, 65, 78, 32))
     print(smallest(43, 23, 49, 12))
+
+# that = 1324
+# this = "Aceclan"
+#
+# print(len(str(that)))
+# print(len(this))
