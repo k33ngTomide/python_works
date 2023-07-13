@@ -1,3 +1,4 @@
+
 total = 0.0
 counter = 0
 positive_counter = 0

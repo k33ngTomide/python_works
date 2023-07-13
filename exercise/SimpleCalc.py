@@ -15,7 +15,6 @@ def calculate() -> str:
     elif example[2] == "*":
         answer_multiply = first_number * second_number
         return str(answer_multiply)
-
     invalid = "Invalid Operator"
     return invalid
 

@@ -1,3 +1,4 @@
+
 def main() -> None:
     celsius = int(input("Enter the temperature in celsius:  "))
 

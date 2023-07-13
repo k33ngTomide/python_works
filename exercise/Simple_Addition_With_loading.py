@@ -4,8 +4,8 @@ from threading import Event
 def main() -> None:
     first_number, operator, second_number = input("Enter:  ").split(" ", 2)
 
-    first_number = int(first_number)
-    second_number = int(second_number)
+    first_number = float(first_number)
+    second_number = float(second_number)
     print("Please wait.\nLoading", end= " ")
     waiting()
 
@@ -33,6 +33,7 @@ def main() -> None:
         waiting()
         print("\nOperator Not found, please try again later")
 
+    main()
 
 def waiting() -> None:
     for load in range(1, 6):
