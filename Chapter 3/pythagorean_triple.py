@@ -1,14 +1,5 @@
 import math
 
-
-#
-# adjacent = int(input('Enter the adjacent of the triangle:  '))
-# opposite = int(input('Enter the opposite of the triangle:  '))
-#
-# hypo = math.sqrt((opposite**2) + (adjacent**2))
-#
-# print(f'The hypotenuse of {opposite} and {adjacent} is {hypo}')
-
 def pythagorean(n):
     for adj in range(1, n - 1):
         for opp in range(adj + 1, n):
