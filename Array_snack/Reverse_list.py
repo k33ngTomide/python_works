@@ -1,6 +1,6 @@
 
 def main():
-    print(reverse(["Akintomide", "Tomide", "Muiliyu", 1, 3, 8.9]))
+    print(reverse(["Akintomide", "Tomide", 1, 3, 8.9, "Muiliyu"]))
 
 def reverse(array: list) -> list:
     new_array = []
