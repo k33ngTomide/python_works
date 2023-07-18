@@ -1,5 +1,4 @@
 
-
 def to_decimal(binary: int ) -> int:
 
     total = 0

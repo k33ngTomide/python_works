@@ -1,14 +1,5 @@
 
-
-def main() -> None:
-    word = "Adeleda"
-    isPalindrome = palindrome(word)
-
-    print("is ", word, " a palindrome? ", isPalindrome )
-
-
-
-def palindrome(word) -> bool:
+def palindrome(word: str) -> bool:
     newWord = ""
     for counter in range(len(word)):
         character = word[(len(word) - 1) - counter]
@@ -18,5 +9,12 @@ def palindrome(word) -> bool:
     return newWord.capitalize() == word.capitalize()
 
 
+
+def palindrome(word: str) -> bool:
+    return word == word[::-1]
+
 if __name__ == '__main__':
-    main()
+    word = "Adebayo"
+    isPalindrome = palindrome(word)
+
+    print("is ", word, " a palindrome? ", isPalindrome)

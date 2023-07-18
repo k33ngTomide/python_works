@@ -8,10 +8,7 @@ def largest(number: list) -> int:
 
     return largest_number
 
-def main() -> None:
-    largest_number = largest([2, 4, 56, 32, 23, 6])
-    print("The largest Number is:",largest_number)
-
 
 if __name__ == '__main__':
-    main()
+    largest_number = largest([2, 4, 56, 32, 23, 6])
+    print("The largest Number is:", largest_number)

@@ -1,9 +1,3 @@
-
-def main() -> None:
-    number = [2, 3, 6, 7, 8, 10, 11, 13, 15, 16]
-    print(even_indexes(number))
-
-
 def even_indexes(array_list: list) -> list:
     new_array = []
 
@@ -13,5 +7,3 @@ def even_indexes(array_list: list) -> list:
 
     return new_array
 
-if __name__ == '__main__':
-    main()
