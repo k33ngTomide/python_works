@@ -1,14 +1,15 @@
 
-def unique(data_list: list) -> list:
-
+def unique(data_list) :
     new_list = []
+
     for item in data_list:
-        if item in new_list:
-            continue
-        else:
-            new_list+=[item]
+        if item not in new_list: new_list += [item]
 
     return new_list
 
 if __name__ == '__main__':
-    print(unique([34,23,24,21,32,43,23,44,54,34,23,22,76,77,33,24,34]))
+    unique_data = unique([34, 23, 24, 21, 33, 33, 24, 34, 23, 21])
+    print(unique_data)
+
+    checked_list = unique("AKARA")
+    print(checked_list)
