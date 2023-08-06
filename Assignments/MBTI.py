@@ -1,3 +1,4 @@
+import re
 
 all_user_entries = [["I", "I", "I", "I"],
                     ["I", "I", "I", "I"],
@@ -44,11 +45,13 @@ name = ""
 
 def name_collector() -> None:
     global name
-    if user_name := input("What is your name: "):
+    user_name = input("What is your name: ")
+    if re.fullmatch('[A-Za-z]{2,25}\s[A-Za-z]{2,25}', user_name):
         name = user_name
     else:
         print("Invalid Entry, Try Again!!. A name should contain only Letters from A to Z")
-        nameCollector()
+        name_collector()
+
 
 user_response = ""
 
