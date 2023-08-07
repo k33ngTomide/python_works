@@ -1,3 +1,4 @@
+import re
 
 type = ""
 card_number = ""
@@ -12,7 +13,6 @@ def card_type_detector(card_number: str):
 
     if is_card_valid():
         global type
-
         if card_number.startswith("4"): type += "Visa"
         elif card_number.startswith("5"): type += "MasterCard"
         elif card_number.startswith("37"): type += "America ExpressCard"
@@ -54,22 +54,30 @@ def card_validity_detector(card_number: str):
     return validity_status
 
 
-if __name__ == '__main__':
+def input_():
+    global card_number
+
     user_card_number = input("Hello, Kindly enter card Details to verify: ")
 
-    if 13 <= len(user_card_number) <= 16:
+    if re.search("^[0-9]+$",user_card_number):
+        if 13 <= len(user_card_number) <= 16:
+            card_number = user_card_number
+            card_type_detector(user_card_number)
+            card_validity_detector(user_card_number)
 
-        card_number = user_card_number
-        card_type_detector(user_card_number)
-        card_validity_detector(user_card_number)
+            print()
+            print("*" * 40,
+                    "\n**Credit Card Type: ", type,
+                    "\n**Credit Card Number: ", user_card_number,
+                    "\n**Credit Card Digit Length: ", len(user_card_number),
+                    "\n**Credit Card Validity status: ", validity_status,
+                    "\n", "*" * 40)
+        else :
+            print("Credit Card Number must be between 13 and 16")
+            input_()
+    else:
+        print("Credit Card Number cannot be blank, contain letters or space. \nTry Again!")
+        input_()
 
-        print()
-        print("*"*40,
-                "\n**Credit Card Type: ", type,
-                "\n**Credit Card Number: ", user_card_number,
-                "\n**Credit Card Digit Length: ", len(user_card_number),
-                "\n**Credit Card Validity status: ", validity_status,
-                "\n", "*"*40)
-
-    else :
-        print("Credit Card Number cannot be blank or contain letters. \nTry Again!")
+if __name__ == '__main__':
+    input_()

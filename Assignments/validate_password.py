@@ -10,16 +10,25 @@ def password_validator():
 def length_check():
     global password
     if len(password) >= 8:
+        space_check()
+    else:
+        print("Invalid\nPassword must be longer than 8 characters, Try again")
+        password_validator()
+
+def space_check():
+    global password
+    if re.search("^(?!.*\s)", password):
         uppercase_check()
     else:
-        print("Invalid\nPassword must be longer than 8 characters")
+        print("Invalid\nPassword cannot contain a space character, Try Again")
         password_validator()
+
 def uppercase_check():
     global password
     if re.search(".*?[A-Z]", password):
         lowercase_check()
     else:
-        print("Invalid\npassword must contain at least one uppercase letter")
+        print("Invalid\nPassword must contain at least one uppercase letter, Try Again")
         password_validator()
 
 def lowercase_check():
@@ -27,14 +36,14 @@ def lowercase_check():
     if re.search(".*?[a-z]", password):
         number_check()
     else:
-        print("Invalid\npassword must contain at least one lowercase letter")
+        print("Invalid\nPassword must contain at least one lowercase letter, Try Again")
         password_validator()
 def number_check():
     global password
     if re.search(".*?[0-9]", password):
         special_char_check()
     else:
-        print("Invalid\npassword must contain at least one number")
+        print("Invalid\nPassword must contain at least one number, Try Again")
         password_validator()
 
 def special_char_check():
@@ -42,7 +51,7 @@ def special_char_check():
     if re.search(".*?[!@$%^#&*_><]", password):
         saved()
     else:
-        print("Invalid\npassword must contain at least one special character")
+        print("Invalid\nPassword must contain at least one special character, Try Again")
         password_validator()
 
 def saved():
