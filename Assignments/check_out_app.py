@@ -17,7 +17,6 @@ customer_bill_total = 0
 amount_paid = 0.0
 
 
-
 def start_info_input():
     global customer_name
     user_input = input("What is the Customer's name? ")
@@ -27,6 +26,7 @@ def start_info_input():
     else:
         print("This is not a valid name, Input a valid name")
         start_info_input()
+
 
 def more_items():
     user_input = input("Add more Items?")
@@ -40,9 +40,10 @@ def more_items():
         cashier_info()
     else:
         print("Invalid Input, " +
-                       "\nEnter Yes (if there are more items) or " +
-                       "\nNo (if there is no more item)")
+              "\nEnter Yes (if there are more items) or " +
+              "\nNo (if there is no more item)")
         more_items()
+
 
 def cashier_info():
     global cashier_name
@@ -53,6 +54,7 @@ def cashier_info():
     else:
         print("This is not a valid name, Input a valid name")
         cashierInfo()
+
 
 def discount_given():
     global discount
@@ -68,6 +70,7 @@ def discount_given():
         print("Invalid discount, try again")
         discount_given()
 
+
 def item_name_input():
     user_input = input("What did the user buy?")
 
@@ -78,8 +81,8 @@ def item_name_input():
         print("Input invalid")
         item_name_input()
 
-def pieces_input():
 
+def pieces_input():
     pieces = input("How many pieces")
     if re.search("^[0-9]+$", pieces):
         if int(pieces) > 0:
@@ -92,10 +95,11 @@ def pieces_input():
         print("Invalid, input the number of pieces bought")
         pieces_input()
 
+
 def price_input():
     product_price = input("How much per unit?")
 
-    if  re.fullmatch("^\d+?\.\d+?$", product_price):
+    if re.fullmatch("^\d+?\.\d+?$", product_price):
         if float(product_price) > 0:
             item_price.append(float(product_price))
             more_items()
@@ -105,6 +109,7 @@ def price_input():
     else:
         print("Invalid input, input the product price")
         price_input()
+
 
 def bill_page():
     heading_info()
@@ -121,10 +126,12 @@ def bill_page():
     double_design()
     customer_pay()
 
+
 def heading_info():
-    global store_name, branch,store_address,telephone, cashier_name,date,customer_name
-    print (f"\n{store_name} \n{branch}  \nLocation: {store_address} \nTEL: {telephone},"
-           f"\nDate: {date} \nCashier: {cashier_name} \nCustomer name: {customer_name} ")
+    global store_name, branch, store_address, telephone, cashier_name, date, customer_name
+    print(f"\n{store_name} \n{branch}  \nLocation: {store_address} \nTEL: {telephone},"
+          f"\nDate: {date} \nCashier: {cashier_name} \nCustomer name: {customer_name} ")
+
 
 def list_printing():
     global sub_total
@@ -133,14 +140,16 @@ def list_printing():
         sub_total += total
         print(f"{items_bought[index]: >10}  {item_pieces[index]: >10} {item_price[index]: >10} \t\t {total: >10}")
 
+
 def restore():
     global sub_total
     sub_total = 0
 
-def sub_total_total():
 
+def sub_total_total():
     print(f"Sub Total: {sub_total: >10.2f} \nDiscount:  {((discount / 100) * sub_total): >10.2f},"
           f"\nVAT @ 17.50%: {((sub_total / 100) * 17.5): >10.2f}")
+
 
 def bill_total():
     global customer_bill_total
@@ -149,16 +158,19 @@ def bill_total():
     customer_bill_total = bill
     print(f"Bill Total:  {bill: >10.2f}")
 
+
 def double_design():
     print("=" * 50)
+
 
 def single_design():
     print("-" * 50)
 
+
 def customer_pay():
     global amount_paid, customer_bill_total
     user_input = input("How much did the customer give you?")
-    if  re.fullmatch("^\d+?\.\d+?$", user_input):
+    if re.fullmatch("^\d+?\.\d+?$", user_input):
         if float(user_input) >= customer_bill_total:
             amount_paid = float(user_input)
         else:
@@ -167,6 +179,7 @@ def customer_pay():
     else:
         print("Amount can contain only numbers and decimal point")
         customer_pay()
+
 
 def receipt():
     restore()
@@ -184,12 +197,13 @@ def receipt():
     print("\t\t\tTHANK YOU FOR YOUR PATRONAGE")
     double_design()
 
-def amount_customer_paid():
 
+def amount_customer_paid():
     balance = (amount_paid - customer_bill_total)
     print(f"Amount Paid: {amount_paid: >10.2f} \nBalance: {balance: >10.2f}")
 
+
 if __name__ == '__main__':
-        start_info_input()
-        bill_page()
-        receipt()
+    start_info_input()
+    bill_page()
+    receipt()
