@@ -1,3 +1,4 @@
+import itertools
 import re
 
 number_of_students = 0
@@ -5,8 +6,12 @@ number_of_subjects = 0
 default_value = "null"
 student_score = []
 total_score = []
+overall_total = 0
+total_entry = 0
+
 def set_numbers() -> None:
     global number_of_students, number_of_subjects
+
     try:
         all_students = int(input("Enter the number of Students"))
         all_subjects = int(input("Enter the number of Subjects"))
@@ -57,10 +62,9 @@ def design():
 
 
 def scores_filler():
+    global overall_total, total_entry
 
     total = 0
-    overall_total = 0
-    total_entry= 0
     average = 0.0
 
     for index in range(1, len(student_score)):
@@ -95,12 +99,40 @@ def position_calculator():
 
     sorted(total_score)
 
-    for counter in range(1, len(total_score)):
-        for index in range(1,len(student_score[0]) - 3):
-            value = int(student_score[index][len(student_score[0])- 3])
+    for counter, index in itertools.product(range(1, len(total_score)), range(1, number_of_students)):
+        value = int(student_score[index][len(student_score[0])- 3])
 
-            if total_score[counter] == value:
-                student_score[index][len(student_score[0])- 1] = number_of_students - counter
+        if total_score[counter] == value:
+            student_score[index][len(student_score[0])- 1] = number_of_students - counter
+
+def class_summary():
+        sorted(total_score)
+
+        highest_score = len(total_score) - 1
+        lowest_score = total_score[1]
+
+        for counter in range(len(total_score)):
+            print()
+            if highest_score == student_score[counter][len(student_score[0]) - 3]:
+                design_printer()
+                print(f"The Best Graduating Student is: {student_score[counter][0]}  "
+                      f"scoring {student_score[counter][len(student_score[0]) - 3]}")
+                design_printer()
+
+            if lowest_score == student_score[counter][len(student_score[0]) - 3]:
+                print("!" * 55)
+                print(f"The Worst Graduating Student is: {student_score[counter][0]}  "
+                      f"scoring {student_score[counter][len(student_score[0]) - 3]}")
+                print("!" * 55)
+
+        design_printer()
+        print(f"Class Total is: {overall_total}")
+        print(f"Class Average is: {(overall_total / total_entry) : .2f}")
+        design_printer()
+
+
+def design_printer():
+    print("=" * 55)
 
 
 if __name__ == '__main__':
@@ -113,3 +145,4 @@ if __name__ == '__main__':
     design()
     print_output()
     design()
+    class_summary()
