@@ -1,5 +1,6 @@
 import re
 from enum import Enum
+
 def find_state_zone(state) -> str:
     state_enum = {
     "NORTH_CENTRAL" : ["Benue", "FCT", "Kogi", "Kwara", "Nasarawa", "Niger", "Plateau"],
@@ -29,7 +30,7 @@ def get_zone(state, given_dict) -> str:
     found_zone = "No zone"
     for politicalZone, state_list in given_dict.items():
         for new_state in state_list:
-            if state == new_state:
+            if state.lower().capitalize() == new_state:
                 found_zone = politicalZone
                 break
 
@@ -38,7 +39,7 @@ def get_zone(state, given_dict) -> str:
 def input_checker() -> None:
     state_input = input("Enter a state to get the geopolitical zone: ")
     if state_input.isdigit() or re.search("^[0-9]*[.]", state_input):
-        print("Input must be a letters, Not Numbers")
+        print("Input cannot be Numbers or contain special character")
         input_checker()
     state_zone = find_state_zone(state_input)
     print(state_zone)

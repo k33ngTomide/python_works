@@ -97,18 +97,27 @@ def scores_filler():
 def position_calculator():
     global total_score, number_of_students
 
-    sorted(total_score)
+    new_total_score = list.copy(total_score)
 
-    for counter, index in itertools.product(range(1, len(total_score)), range(1, number_of_students)):
-        value = int(student_score[index][len(student_score[0])- 3])
+    print(new_total_score)
+    for counter in range(len(new_total_score), 0, -1):
+        for index in range(counter - 1):
+            if new_total_score[index] > new_total_score[index + 1]:
+                temp = new_total_score[index]
+                new_total_score[index] = new_total_score[index+1]
+                new_total_score[index+1] = temp
 
-        if total_score[counter] == value:
-            student_score[index][len(student_score[0])- 1] = number_of_students - counter
+    for counter in range(1, len(total_score)):
+        for index in range(1, number_of_students):
+            value = student_score[index][len(student_score[0])- 3]
+
+            if new_total_score[counter] == value:
+                student_score[index][len(student_score[0]) - 1] = number_of_students - counter
 
 def class_summary():
         sorted(total_score)
 
-        highest_score = len(total_score) - 1
+        highest_score = len(total_score) - 2
         lowest_score = total_score[1]
 
         for counter in range(len(total_score)):
