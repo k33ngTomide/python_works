@@ -33,8 +33,6 @@ class Poster:
         return f'({self.__first_poster + other.__first_poster} , {self.__second_poster + other.__second_poster})'
 
 
-
-
 if __name__ == '__main__':
 
     Poster.poster_colour = "White"
